@@ -2,8 +2,8 @@ const { Button } = require("bootstrap");
 
 class Calculator{
     constructor(previousOperandtextElement,currentOperandtextElement){
-        this.previousOperandtextElement = previousOperandtextElement;
-        this.currentOperandtextElement = currentOperandtextElement;
+        this.previousOperandtextElement = previousOperandtextElement
+        this.currentOperandtextElement = currentOperandtextElement
 
     }
     clear(){
@@ -18,7 +18,7 @@ class Calculator{
 
     }
 
-    appendnumber(number){
+    appendNumber(number){
         this.currentOperand = number;
 
     }
@@ -40,9 +40,9 @@ class Calculator{
 
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
-const equalButton = document.querySelectorAll('[data-equals]');
-const deleteButton = document.querySelectorAll('[data-delete]');
-const allClearButton = document.querySelectorAll('[data-all-clear]');
+const equalButton = document.querySelector('[data-equals]');
+const deleteButton = document.querySelector('[data-delete]');
+const allClearButton = document.querySelector('[data-all-clear]');
 const previousOperandtextElement = document.querySelectorAll(
     '[data-previuos-operand]');
 const currentOperandtextElement = document.querySelectorAll(
@@ -53,7 +53,7 @@ const calculator =  new Calculator(previousOperandtextElement,
 
     numberButtons.forEach(button => {
         button.addEventListener('click', () =>{
-            calculator.appendnumber(button.innerText)
+            calculator.appendNumber(button.innerText)
             calculator.updateDisplay()
         })
     })
